@@ -55,6 +55,7 @@ function sendToDiscord(message) {
     /* A successful POST to Discord's webhook responds with a 204 NO CONTENT */
     if (res.statusCode !== 204) {
       console.error("Error occured during the request to the Discord webhook");
+      console.error(body)
     }
   });
 }
