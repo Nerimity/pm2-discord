@@ -24,6 +24,11 @@ var suppressed = {
 };
 
 
+function getLastNCharacters(str, len) {
+  return str.substr(-len, len)
+}
+
+
 // Function to send event to Discord's Incoming Webhook
 function sendToDiscord(message) {
 
@@ -36,7 +41,7 @@ function sendToDiscord(message) {
 
   // The JSON payload to send to the Webhook
   var payload = {
-    "content" : description
+    "content" : getLastNCharacters(description, 1999)
   };
 
   // Options for the post request
