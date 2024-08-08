@@ -2,7 +2,7 @@
 var pm2 = require('pm2');
 var pmx = require('pmx');
 var request = require('request');
-var stripAnsi = require('strip-ansi');
+//var stripAnsi = require('strip-ansi');
 
 // Get the configuration from PM2
 var conf = pmx.initModule();
@@ -141,7 +141,7 @@ function createMessage(data, eventName, altDescription) {
   messages.push({
     name: data.process.name,
     event: eventName,
-    description: stripAnsi(msg),
+    description: msg,
     timestamp: Math.floor(Date.now() / 1000),
   });
 }
